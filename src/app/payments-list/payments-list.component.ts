@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PaymentsService } from './payments.service';
+import { PaymentsService } from '../services/payments.service';
+import { TranslationService } from '../services/translation.service';
 
-import { Payment } from '../classes/payments';
+import { Payment } from '../models/payments';
 
 @Component({
   selector: 'payments-list',
@@ -12,7 +13,11 @@ export class PaymentsListComponent implements OnInit{
 
   payments :Payment[] = [];
 
-  constructor( private _paymentsService :PaymentsService ) { }
+  config :TranslationService = new TranslationService();
+
+  constructor( 
+    private _paymentsService :PaymentsService
+  ) { }
 
   ngOnInit(){
     this._paymentsService.getPayments()
