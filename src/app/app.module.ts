@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PaymentsListComponent } from './payments-list/payments-list.component';
 
+import { PaymentsService } from './payments-list/payments.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,7 @@ import { PaymentsListComponent } from './payments-list/payments-list.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [PaymentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

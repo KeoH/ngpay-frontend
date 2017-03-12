@@ -1,3 +1,8 @@
-<p>
-  payments-list works!
-</p>
+<ul>
+  <li *ngFor="let payment of payments">
+    <p>{{ payment.description }}</p>
+    <p>{{ payment.type }}</p>
+    <p>{{ payment.amount|number:'1.2-2' }}</p>
+    <p>{{ payment.getDate() }} | {{ payment.getTime() }}</p>
+  </li>
+</ul>
