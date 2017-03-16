@@ -19,7 +19,7 @@
       "tsconfig": "tsconfig.json",
       "prefix": "ngpay",
       "styles": [
-        "styles.sass"
+        "sass/main.sass"
       ],
       "scripts": [],
       "environments": {
