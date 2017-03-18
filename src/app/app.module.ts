@@ -6,8 +6,8 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { PaymentsListComponent } from './payments-list/payments-list.component';
 import 'hammerjs';
-import { PaymentsService } from './services/payments.service';
-import { TranslationService } from './services/translation.service';
+import { PaymentsService } from './_services';
+import { TranslationService } from './_services';
 
 @NgModule({
   declarations: [
