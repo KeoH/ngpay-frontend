@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PaymentsService } from '../services/payments.service';
-import { TranslationService } from '../services/translation.service';
+import { PaymentsService } from '../_services/payments.service';
+import { TranslationService } from '../_services/translation.service';
 
-import { Payment } from '../models/payments';
+import { Payment } from '../_models';
 
 @Component({
   selector: 'payments-list',

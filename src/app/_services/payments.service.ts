@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/Rx';
 
-import { Payment } from '../models/payments';
+import { Payment } from '../_models';
 
 @Injectable()
 export class PaymentsService {

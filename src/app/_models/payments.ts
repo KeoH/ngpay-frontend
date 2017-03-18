@@ -1,5 +1,5 @@
 
-import { Serializable } from '../interfaces/serializable';
+import { Serializable } from '../_interfaces';
 
 
 export class Payment implements Serializable<Payment>{
