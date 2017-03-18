@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
-import { PaymentsListComponent } from './payments-list/payments-list.component';
+import { PaymentsListComponent } from './_components/payments-list';
 import 'hammerjs';
-import { PaymentsService } from './_services';
-import { TranslationService } from './_services';
+
+import { PaymentsService, TranslationService, AuthenticationService } from './_services';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { TranslationService } from './_services';
     HttpModule,
     MaterialModule
   ],
-  providers: [PaymentsService, TranslationService],
+  providers: [PaymentsService, TranslationService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import 'rxjs/Rx';
 
 import { Payment } from '../_models';
+import { get_server_route } from '../_configs';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable()
 export class PaymentsService {
 
-  private _url = 'http://localhost:8000/api/payments/?format=json';
+  private _url = get_server_route('/api/payments/?format=json');
 
-  constructor ( private _http :Http) { }
+  constructor ( 
+    private _http :Http,
+    private _authService :AuthenticationService
+  ) {  }
 
-  getHeaders(){
-    const headers = new Headers();
-    return headers;
-  }
 
   getPayments(){
-
-    return this._http.get(this._url)
+    return this._http.get(this._url, this._authService.getOptions())
       .map(
         (response :Response) => response.json()
       );
