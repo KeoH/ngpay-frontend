@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     templateUrl: '../_templates/payments-list-view.template.html'
 })
-export class LoginView implements OnInit {
+export class PaymentsListView implements OnInit {
 
     constructor( ){ }
 

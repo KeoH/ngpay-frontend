@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../_services';
 
@@ -8,24 +9,32 @@ import { AuthenticationService } from '../_services';
 })
 export class LoginView implements OnInit {
 
-    public logged;
+    constructor(
+        private _authService: AuthenticationService,
+        private _router :Router
+    ) { }
 
-    constructor(private _authService: AuthenticationService) { }
+    form = {
+        username : '',
+        password : ''
+    };
+    loading = false;
+    error = {};
 
     ngOnInit() {
-
-    }
-
-    login(username :string, password :string) {
-        this._authService.login(username, password)
-            .subscribe(loggin => {
-                this.logged = loggin;
-            });
-    }
-
-    logout() {
         this._authService.logout();
     }
 
-
+    login() {
+        this.loading = true;
+        this._authService.login(this.form.username, this.form.password)
+            .subscribe(result => {
+                if(result === true){
+                    this._router.navigate(['/']);
+                } else {
+                    this.error['message'] = 'Username or password is incorrect';
+                    this.loading = false;
+                }
+            });
+    }
 }
