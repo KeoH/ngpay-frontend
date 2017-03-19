@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
-import { PaymentsListComponent } from './_components/payments-list';
+
+import { LoginView } from './_views';
+
+import { PaymentsListComponent } from './_components';
 import 'hammerjs';
 
 import { PaymentsService, TranslationService, AuthenticationService } from './_services';
@@ -13,6 +16,7 @@ import { PaymentsService, TranslationService, AuthenticationService } from './_s
 @NgModule({
   declarations: [
     AppComponent,
+    LoginView,
     PaymentsListComponent
   ],
   imports: [

@@ -1,7 +1,0 @@
-<h1>
-  {{title}}
-</h1>
-<button md-raised-button (click)="login()" *ngIf="!logged">Logearse</button>
-<button md-raised-button (click)="logout()" *ngIf="logged">Deslogearse</button>
-
-<payments-list *ngIf="logged"></payments-list>

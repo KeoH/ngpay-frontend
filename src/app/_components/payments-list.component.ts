@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PaymentsService, TranslationService } from '../../_services';
+import { PaymentsService, TranslationService } from '../_services';
 
-import { Payment } from '../../_models';
+import { Payment } from '../_models';
 
 @Component({
   selector: 'payments-list',
-  templateUrl: './payments-list.component.html'
+  templateUrl: '../_templates/components/payments-list.template.html'
 })
 export class PaymentsListComponent implements OnInit{
 

@@ -4,8 +4,8 @@ import { AuthenticationService } from './_services';
 
 @Component({
   selector: 'ngpay-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  templateUrl: './_templates/app.component.html',
+  styleUrls: ['../sass/app.component.sass']
 })
 export class AppComponent {
   title = 'ngpay works!';
