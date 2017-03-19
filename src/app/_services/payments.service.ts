@@ -12,16 +12,16 @@ export class PaymentsService {
 
   private _url = get_server_route('/api/payments/?format=json');
 
-  constructor ( 
-    private _http :Http,
-    private _authService :AuthenticationService
-  ) {  }
+  constructor(
+    private _http: Http,
+    private _authService: AuthenticationService
+  ) { }
 
 
-  getPayments(){
+  getPayments() {
     return this._http.get(this._url, this._authService.getOptions())
       .map(
-        (response :Response) => response.json()
+      (response: Response) => response.json()
       );
   }
 }

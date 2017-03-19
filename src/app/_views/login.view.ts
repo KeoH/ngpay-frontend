@@ -22,7 +22,7 @@ export class LoginView implements OnInit {
     error = {};
 
     onSubmit(){
-        
+        console.log("Gugu");
     }
 
     ngOnInit() {

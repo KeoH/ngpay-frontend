@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginView, PaymentsListView } from './_views';
 import { routing } from './routing';
@@ -12,6 +13,8 @@ import 'hammerjs';
 
 import { PaymentsService, TranslationService, AuthenticationService } from './_services';
 import { AuthGuard } from './_guards';
+import { LoginFormComponent } from './_components/';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,18 @@ import { AuthGuard } from './_guards';
     LoginView,
     PaymentsListView,
 
-    PaymentsListComponent
+    PaymentsListComponent,
+
+    LoginFormComponent,
+
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule,
+    ReactiveFormsModule,
     routing
   ],
   providers: [
