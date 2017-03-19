@@ -21,6 +21,10 @@ export class LoginView implements OnInit {
     loading = false;
     error = {};
 
+    onSubmit(){
+        
+    }
+
     ngOnInit() {
         this._authService.logout();
     }
