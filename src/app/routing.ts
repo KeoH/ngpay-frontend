@@ -1,13 +1,14 @@
 
 import { Routes, RouterModule } from '@angular/router';
 
-import { LoginView, PaymentsListView } from './_views';
+import { LoginView, PaymentsListView, DashboardView } from './_views';
 
 import { AuthGuard } from './_guards';
 
 const appRoutes :Routes = [
     { path: 'login', component: LoginView },
-    { path: '', component: PaymentsListView, canActivate: [AuthGuard] },
+    { path: 'payments', component: PaymentsListView, canActivate: [AuthGuard] },
+    { path: '', component: DashboardView, canActivate: [AuthGuard] },
 
     { path: '**', redirectTo : '' }
 ];

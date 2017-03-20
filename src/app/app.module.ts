@@ -5,14 +5,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { LoginView, PaymentsListView } from './_views';
+import { LoginView, PaymentsListView, DashboardView } from './_views';
 import { routing } from './routing';
-import { PaymentsListComponent } from './_components';
 import 'hammerjs';
 
 import { PaymentsService, TranslationService, AuthenticationService } from './_services';
 import { AuthGuard } from './_guards';
-import { LoginFormComponent } from './_components/';
+import { LoginFormComponent, HeaderTopComponent, PaymentsListComponent } from './_components/';
 
 
 @NgModule({
@@ -20,11 +19,14 @@ import { LoginFormComponent } from './_components/';
     AppComponent,
     
     LoginView,
+    DashboardView,
     PaymentsListView,
 
     PaymentsListComponent,
 
-    LoginFormComponent
+    LoginFormComponent,
+
+    HeaderTopComponent
   ],
   imports: [
     BrowserModule,
