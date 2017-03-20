@@ -8,25 +8,33 @@ import { Payment } from '../_models';
   selector: 'payments-list',
   templateUrl: '../_templates/components/payments-list.template.html'
 })
-export class PaymentsListComponent implements OnInit{
+export class PaymentsListComponent implements OnInit {
 
-  payments :Payment[] = [];
+  payments: Payment[] = [];
 
-  config :TranslationService = new TranslationService();
+  config: TranslationService = new TranslationService();
 
-  constructor( 
-    private _paymentsService :PaymentsService
+  constructor(
+    private _paymentsService: PaymentsService
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this._paymentsService.getPayments()
       .subscribe(
-        (data :any) => {
-          for(let item of data){
-            this.payments.push(new Payment(item))
-          }
+      (data: any) => {
+        for (let item of data) {
+          this.payments.push(new Payment(item))
         }
+      }
       );
+  }
+
+  getTotalAmount(): number {
+    let total = 0;
+    for (let item of this.payments) {
+      total += item.amount;
+    }
+    return total
   }
 
 }

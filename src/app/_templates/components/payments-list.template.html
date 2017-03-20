@@ -1,5 +1,5 @@
-<table style="width:100%;">
-  <thead>
+<table class="table">
+  <thead class="thead-default">
     <th>{{ config.translate('Type') }}</th>
     <th>{{ config.translate('Description') }}</th>
     <th>{{ config.translate('Amount') }}</th>
@@ -11,6 +11,12 @@
       <td>{{ payment.description }}</td>
       <td>{{ payment.amount|number:'1.2-2' }} €</td>
       <td>{{ payment.getDate() }} | {{ payment.getTime() }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Total:</td>
+      <td>{{ getTotalAmount()|number:'1.2-2'}} €</td>
     </tr>
   </tbody>
 </table>
