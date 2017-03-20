@@ -14,7 +14,7 @@ import 'hammerjs';
 import { PaymentsService, TranslationService, AuthenticationService } from './_services';
 import { AuthGuard } from './_guards';
 import { LoginFormComponent } from './_components/';
-import { SignupFormComponent } from './signup-form/signup-form.component';
+
 
 @NgModule({
   declarations: [
@@ -25,9 +25,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 
     PaymentsListComponent,
 
-    LoginFormComponent,
-
-    SignupFormComponent
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,26 @@
-<form name="form" novalidate (ngSubmit)="onSubmit()">
+<form name="form" novalidate (ngSubmit)="onSubmit()" [formGroup]="form" >
   <div>
-    <label for="username">Username</label>
-    <input type="text" name="username" required />
+    <md-input-container>
+      <input 
+        mdInput 
+        type="text" 
+        formControlName="username"
+        required 
+        placeholder="Username"/>
+    </md-input-container>
   </div>
   <div>
-    <label for="password">Password</label>
-    <input type="password" name="password" required />
+    <md-input-container>
+      <input 
+        mdInput 
+        type="password"
+        formControlName="password"
+        required 
+        placeholder="Password" />
+    </md-input-container>
   </div>
   <div>
-    <button [disabled]="loading" type="submit" (ngSubmit)="onSubmit()">Login</button>
+    <button md-raised-button color="primary" [disabled]="loading" type="submit" (ngSubmit)="onSubmit()">Login</button>
     <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
     />
   </div>
