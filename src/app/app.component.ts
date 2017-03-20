@@ -7,5 +7,4 @@ import { AuthenticationService } from './_services';
   templateUrl: './_templates/app.component.html'
 })
 export class AppComponent {
-  title = 'NgPay';
 }

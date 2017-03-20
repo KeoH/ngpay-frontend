@@ -11,37 +11,39 @@ import { AuthenticationService } from '../_services';
 })
 export class LoginFormComponent implements OnInit {
 
-  error = {};
+  error = {
+    message: null
+  };
   loading = false;
-  form :FormGroup;
+  form: FormGroup;
   constructor(
-    private _router :Router,
-    public fb :FormBuilder,
+    private _router: Router,
+    public fb: FormBuilder,
     private _authService: AuthenticationService
   ) { }
 
   ngOnInit() {
     this.form = this.fb.group({
-      username : '',
-      password : ''
+      username: '',
+      password: ''
     })
   }
 
   onSubmit() {
-    console.log("enviando");
     this.login();
   }
 
   login() {
     this.loading = true;
     this._authService.login(this.form.value.username, this.form.value.password)
-      .subscribe(result => {
-        if (result === true) {
+      .subscribe(
+        result => {
           this._router.navigate(['/']);
-        } else {
-          this.error['message'] = 'Username or password is incorrect';
+        },
+        error => {
+          this.error.message = 'Username or password is incorrect';
           this.loading = false;
         }
-      });
+      );
   }
 }
