@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
-import { AuthenticationService } from '../_services';
+import { AuthenticationService } from '../../_services';
 
 
 @Component({
-  selector: 'login-form',
-  templateUrl: '../_templates/components/login-form.component.html'
+  selector: 'jwt-login-form',
+  templateUrl: './login-form.component.html'
 })
 export class LoginFormComponent implements OnInit {
 

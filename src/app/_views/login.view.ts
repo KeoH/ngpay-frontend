@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import { AuthenticationService } from '../_services';
+import { AuthenticationService } from '../../modules/jwt-auth/_services/authentication.service';
 
 @Component({
     templateUrl: '../_templates/login-view.template.html'

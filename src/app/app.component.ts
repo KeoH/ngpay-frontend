@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { AuthenticationService } from './_services';
 
 @Component({
   selector: 'ngpay-root',

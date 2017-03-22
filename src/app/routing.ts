@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginView, PaymentsListView, DashboardView } from './_views';
 
-import { AuthGuard } from './_guards';
+import { AuthGuard } from '../modules/jwt-auth/_guards';
 
 const appRoutes :Routes = [
     { path: 'login', component: LoginView },

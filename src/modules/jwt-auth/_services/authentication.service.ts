@@ -3,7 +3,7 @@ import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
-import { get_server_route } from '../_configs';
+import { get_server_route } from '../../../app/_configs';
 
 @Injectable()
 export class AuthenticationService {

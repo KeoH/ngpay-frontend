@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 
 import { Payment } from '../_models';
 import { get_server_route } from '../_configs';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from '../../modules/jwt-auth/_services/authentication.service';
 
 @Injectable()
 export class PaymentsService {

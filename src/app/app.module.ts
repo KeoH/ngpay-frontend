@@ -1,18 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginView, PaymentsListView, DashboardView } from './_views';
 import { routing } from './routing';
 import 'hammerjs';
 
-import { PaymentsService, TranslationService, AuthenticationService } from './_services';
-import { AuthGuard } from './_guards';
-import { LoginFormComponent, HeaderTopComponent, PaymentsListComponent } from './_components/';
-
+import { PaymentsService, TranslationService, } from './_services';
+import { HeaderTopComponent, PaymentsListComponent } from './_components/';
+import { JWTModule } from '../modules/jwt-auth/jwt.module';
 
 @NgModule({
   declarations: [
@@ -24,8 +22,6 @@ import { LoginFormComponent, HeaderTopComponent, PaymentsListComponent } from '.
 
     PaymentsListComponent,
 
-    LoginFormComponent,
-
     HeaderTopComponent
   ],
   imports: [
@@ -33,13 +29,12 @@ import { LoginFormComponent, HeaderTopComponent, PaymentsListComponent } from '.
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
+    JWTModule,
     routing
   ],
-  providers: [
-    AuthGuard, 
+  providers: [ 
     PaymentsService, 
-    TranslationService, 
-    AuthenticationService
+    TranslationService
   ],
   bootstrap: [AppComponent]
 })
